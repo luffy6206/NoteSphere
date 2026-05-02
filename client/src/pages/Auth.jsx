@@ -1,7 +1,19 @@
 import React from 'react'
 import { motion } from "motion/react"
 import { FcGoogle } from "react-icons/fc";
+import { signInWithPopup } from 'firebase/auth';
+import { provider } from '../Utils/firebase';
 
+const handleGoogleAuth = async () => {
+    try {
+      const response = await signInWithPopup(auth,provider)
+      const user = response.user
+
+      
+    } catch(error){
+            
+    }
+}
 function Auth(){
     const handleGoogleAuth = () => {
         // TODO: Implement Google authentication logic
