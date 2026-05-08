@@ -5,15 +5,20 @@ import { signInWithPopup } from 'firebase/auth';
 import { provider } from '../Utils/firebase';
 
 const handleGoogleAuth = async () => {
+    
     try {
       const response = await signInWithPopup(auth,provider)
-      const user = response.user
-
-      
-    } catch(error){
-            
+      const User = response.user
+      const name = User.displayName
+      const email = User.email
+      const result = await axios.post(serverUrl + "/api/auth/google" , {name , email},{
+        withCredentials:true
+      })
+      dispatch(setUserData(result.data))
+    } catch (error) {
+      console.log(error)
     }
-}
+  }
 function Auth(){
     const handleGoogleAuth = () => {
         // TODO: Implement Google authentication logic
