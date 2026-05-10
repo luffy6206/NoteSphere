@@ -136,6 +136,6 @@ function Feature({icon , title , des}){
 }
 
 
-
+// complete the jwt uthentication
 
 export default Auth;
