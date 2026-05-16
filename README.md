@@ -72,7 +72,7 @@ Activity monitoring
 
 ⚙️ Setup Instructions
 Clone Repository
-git clone https://github.com/yourusername/ai-exam-notes-generator.git
+git clone : https://github.com/luffy6206/NoteSphere.git
 Frontend Setup
 cd client
 npm install
