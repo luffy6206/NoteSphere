@@ -4,6 +4,10 @@ import connectDB from "./utils/connectDB.js"
 import authRouter from "./routes/auth.route.js";
 import cors from "cors"
 import cookieParser from "cookie-parser"
+import userRouter from "./routes/user.route.js"
+
+
+
 dotenv.config()
 
 const app = express();
@@ -23,6 +27,10 @@ app.get("/",(req,res)=>{
     res.json({message: "examnotes AI backend running"})
 })
 app.use("/api/auth" , authRouter)
+app.use("/api/user", userRouter)
+
+
+
 app.listen(PORT,()=>{
     console.log(`server running on port ${PORT}`)
     connectDB()
